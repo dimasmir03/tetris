@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Tetris</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body>
+    <div id="game" class="">
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
+        <button id="host">Два игрока</button>
+        <div>Level: <span id="level">0</span></div>
+        <div>Score: <span id="score">0</span></div>
+        <label for="name2">Имя</label>
+        <input type="text" name="name2" id="name2" placeholder="Введите имя" class="form-control">
+        <label for="room1">Комната</label>
+        <input type="text" name="room1" id="room1" placeholder="Введите комнату" class="form-control">
+
+        <div class="main"></div>
+        <div id="all_mess"></div>
+        <div id="game-over">Game over</div>
+        <div id="next-tetro"></div>
+    </div>
+
+    <div id="game2" class="">
+        <div>Level: <span id="level2">0</span></div>
+        <div>Score: <span id="score2">0</span></div>
+        <div class="main2"></div>
+        <div id="game-over2">Game over</div>
+    </div>
+    <script src="../script/script.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script>
+
+    var game1 = document.querySelector('#game');
+    var game2 = document.querySelector('#game2');
+    var main2 = document.querySelector(".main2");
+    var name2 = document.querySelector("#name2");
+    var all_mess = document.querySelector("#all_mess");
+    var room1 = document.querySelector("#room1");
+    var playfield2;
+    var socket = io.connect('/tetris');
+    
+
+    document.querySelector("#host").addEventListener('click', () => {
+      socket.emit('join search', { name: name2.value, room: room1.value, author: name2.value});
+      console.log('good');
+      socket.on('new player', function(data) {
+        console.log(data.mess);        
+      });
+
+        /*socket.on('start host', function(data) {
+          playfield2 = data.playfield;
+          game1.className = 'click';
+          game2.className = 'click2';
+        });
+
+        draw2(playfield2);
+        startGame2(playfield2);*/
+
+    });
+
+    /*function startGame2(playfield2) {
+      draw2(playfield2);
+      setTimeout(startGame2, 3000);
+    }
+
+    function draw2(playfield2) {
+        var mainInnerHTML = "";
+        for (var y = 0; y < playfield2.length; y++) { 
+          for (var x = 0; x < playfield2[y].length; x++) { 
+            if (playfield2[y][x] === 1) { 
+              mainInnerHTML += '<div class="cell movingCell"></div>'; 
+            } else if (playfield2[y][x] === 2) { 
+              mainInnerHTML += '<div class="cell fixedCell"></div>'; 
+            } else { 
+              mainInnerHTML += '<div class="cell"></div>'; 
+            } 
+          } 
+        } 
+        main2.innerHTML = mainInnerHTML;
+    }*/
+    </script> -->
+</body>
+</html>
